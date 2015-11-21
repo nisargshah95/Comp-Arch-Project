@@ -1,4 +1,7 @@
-module CtrlCkt(input [6:0] opcode1, input [4:0] opcode2, output reg regWrite1, output reg regWrite2, output reg g1DstReg, output reg [1:0] aluSrc1, output reg [1:0] aluSrc2, output reg [1:0] aluOp, output reg memRd, output reg memWr, output reg branch, output reg jump, output reg invalid, output reg cause, output reg muxfor1, output reg muxfor2);
+module CtrlCkt(input [6:0] opcode1, input [4:0] opcode2, output reg regWrite1, output reg regWrite2,
+               output reg g1DstReg, output reg [1:0] aluSrc1, output reg [1:0] aluSrc2, output reg [1:0] aluOp, 
+               output reg memRd, output reg memWr, output reg branch, output reg jump, output reg flagWrite1, output reg flagWrite2,  
+               output reg invalid, output reg cause);
 	//src1 --> 00-add[10:8], 01-sub[5:3], 10-cmp/shift[2:0]
 	//src2 --> 00-sub[8:6], 01-cmp/shift[5:3], 10-addSignExt
 		
@@ -136,7 +139,7 @@ module CtrlCkt(input [6:0] opcode1, input [4:0] opcode2, output reg regWrite1, o
 				memRd = 1'b0;
 				invalid = 1'b1;
 				cause = 1'b0;
-				muxfor1 = 1'b0;  //for making regwrite1 for in
+				//muxfor1 = 1'b0;  //for making regwrite1 for in
 			end
 		endcase
 	end

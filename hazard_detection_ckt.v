@@ -16,7 +16,7 @@ module hazard_detection_ckt (input [15:0] opcodeg2, input[15:0] opcodeg1, input 
 				(opcodeg1[15:11] == 5'b00011 && (IDEX_rd == opcodeg1[8:6] || IDEX_rd == opcodeg1[5:3])) || // lw-sub
 				(opcodeg1[15:11] == 5'b01000 && (IDEX_rd == opcodeg1[5:3] || IDEX_rd == opcodeg1[2:0])) || // lw-shft/cmp
 				(opcodeg2[15:11] == 5'b10001 && IDEX_rd == opcodeg2[5:3]) || // lw-lw
-				(opcodeg2[15:11] == 5'b10000 && (IDEX_rd == opcodeg2[5:3] && IDEX_rd == opcodeg2[2:0])) || // lw-sw
+				(opcodeg2[15:11] == 5'b10000 && (IDEX_rd == opcodeg2[5:3] || IDEX_rd == opcodeg2[2:0])) || // lw-sw
 				(opcodeg2[15:11] == 5'b11010) // lw-br
 				)	
 			begin
