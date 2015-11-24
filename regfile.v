@@ -112,7 +112,7 @@ module flagRegisterSet(input clk, input reset, input p3_n_flag, input p3_z_flag,
 	D_ff_flag n_flag(clk, reset, flagWrite1 | flagWrite2, p3_n_flag, n);
 	D_ff_flag z_flag(clk, reset, flagWrite1 | flagWrite2, p3_z_flag, z);
 	D_ff_flag c_flag(clk, reset, flagWrite1, p3_c_flag, c);
-	D_ff_flag o_flag(clk, reset, flagWrite1, p3_o_flag, q);
+	D_ff_flag o_flag(clk, reset, flagWrite1, p3_o_flag, o);
 	
 endmodule
 // End OF Flag Register

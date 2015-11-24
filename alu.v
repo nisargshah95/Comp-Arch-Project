@@ -39,7 +39,7 @@ module alu(input [1:0] aluOp, input[31:0] in1, input[31:0] in2, output reg [31:0
 				{c_flag, res} = in1-in2;
 				n_flag = res[31];
 				if(res == 32'd0) z_flag = 1'b1;
-				if(in1[31] == in2[31] && in1[31] != res[31]) o_flag = 1'b1;
+				if((in1[31] != in2[31]) && (in1[31] != res[31])) o_flag = 1'b1;
 			end
 			
 			2'b11:

@@ -1,5 +1,5 @@
 module hazard_detection_ckt (input [15:0] opcodeg2, input[15:0] opcodeg1, input IDEX_MemRead,
-	input EXMEM_MemRead, input IDEX_flagWrite1, input IDEX_rd, input EXMEM_n_flag,
+	input EXMEM_MemRead, input IDEX_flagWrite1, input [2:0] IDEX_rd, input EXMEM_n_flag,
 	output reg PCWrite, output reg IFWrite, output reg IDEX_ctrl_flush);
 	
 	always@(opcodeg1, opcodeg2, IDEX_MemRead, EXMEM_MemRead, IDEX_flagWrite1, IDEX_rd, EXMEM_n_flag)
